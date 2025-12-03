@@ -2,7 +2,7 @@
 
 **LaundryMagic** adalah aplikasi web modern berbasis AI yang dirancang untuk menghapus latar belakang gambar secara instan, gratis, dan aman. Mengusung konsep unik "Mesin Cuci Digital", aplikasi ini memproses gambar sepenuhnya di sisi klien (browser) tanpa mengunggah data ke server eksternal, menjamin privasi pengguna 100%.
 
-![LaundryMagic Preview](/public/screenshots/desktop.png)
+![LaundryMagic Preview](/public/images/screencapture-192-168-18-32-3000-2025-12-03-16_14_40.png)
 
 ---
 

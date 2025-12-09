@@ -13,7 +13,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  webpack: (config) => {
+  webpack: (config: any) => {
     // Avoid bundling onnxruntime-node for client-side usage
     config.resolve.alias = {
       ...config.resolve.alias,

@@ -9,17 +9,17 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  serverExternalPackages: ["@imgly/background-removal"],
+  serverExternalPackages: ["@imgly/background-removal", "onnxruntime-node", "onnxruntime-web"],
   images: {
-    unoptimized: true, // Try to disable optimization to save resources during build
+    unoptimized: true,
   },
-  turbopack: {
-    rules: {
-      "*.wasm": {
-        loaders: ["file-loader"],
-        as: "*.wasm",
-      },
-    }
+  webpack: (config) => {
+    // Avoid bundling onnxruntime-node for client-side usage
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "onnxruntime-node$": false,
+    };
+    return config;
   },
   async headers() {
     return [

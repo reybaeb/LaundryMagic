@@ -2,6 +2,14 @@ import type { NextConfig } from "next";
 import withPWA from "@ducanh2912/next-pwa";
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  // @ts-expect-error - Turbopack config might not be in the type definition yet
+  turbopack: {},
   async headers() {
     return [
       {

@@ -8,8 +8,19 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  serverExternalPackages: ["@imgly/background-removal"],
+  images: {
+    unoptimized: true, // Try to disable optimization to save resources during build
+  },
   // @ts-expect-error - Turbopack config might not be in the type definition yet
-  turbopack: {},
+  turbopack: {
+    rules: {
+      "*.wasm": {
+        loaders: ["file-loader"],
+        as: "*.wasm",
+      },
+    }
+  },
   async headers() {
     return [
       {

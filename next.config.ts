@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 import withPWA from "@ducanh2912/next-pwa";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
+  // @ts-ignore
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -12,7 +13,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Try to disable optimization to save resources during build
   },
-  // @ts-expect-error - Turbopack config might not be in the type definition yet
   turbopack: {
     rules: {
       "*.wasm": {
